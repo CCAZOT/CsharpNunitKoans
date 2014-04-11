@@ -12,7 +12,7 @@ namespace TheKoans
 		[Test]
 		public void AssertTruth ()
 		{
-			Assert.IsTrue (FILL_ME__IN);   
+			Assert.IsTrue (true);   
 // Your long journey begins with a simple step.  We seek what's true, help us find it.
 		}
 
