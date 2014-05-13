@@ -16,7 +16,7 @@ namespace TheKoans
 		public void DoubleQuotedStringsAreStrings ()
 		{
 			var str = "Hello, World";
-			Assert.AreEqual (typeof(FILL_ME_IN), str.GetType (), "What did Arial say to Serif? - Sorry, you're not my Type.");
+			Assert.AreEqual (typeof(string), str.GetType (), "What did Arial say to Serif? - Sorry, you're not my Type.");
 		}
 
 		[Test]
@@ -31,7 +31,7 @@ namespace TheKoans
 		public void CreateAStringWhichContainsDoubleQuotes ()
 		{
 			var str = "Hello, \"World\"";
-			Assert.AreEqual (FILL_ME_IN, str.Length, "If the length is wrong and you're trapped, consider ways to escape this...");
+			Assert.AreEqual (14, str.Length, "If the length is wrong and you're trapped, consider ways to escape this...");
 		}
 
 		[Test]
@@ -40,7 +40,7 @@ namespace TheKoans
 			//The @ symbol creates a 'verbatim string literal'. 
 			//Here's one thing you can do with it:
 			var str = @"Hello, ""World""";
-			Assert.AreEqual (FILL_ME_IN, str.Length, "So many quotes, so few characters...");
+			Assert.AreEqual (14, str.Length, "So many quotes, so few characters...");
 		}
 
 		[Test]
@@ -74,7 +74,7 @@ broken line";
 			//(\r\n for Windows, \n for Linux) you shouldn't just type in
 			//the hardcoded escape sequence. A much better way would be to
 			//use a property from the Environment class; change the line below
-			var environmentNewLine = FILL_ME_IN;
+			var environmentNewLine = "\r\n";
             
 			//(We'll handle concatenation and better ways of that in a bit)
 			const string verbatimString = @"I
@@ -148,7 +148,7 @@ broken line";
 				strBuilder.Append ("a");
 			}
 			var str = strBuilder.ToString ();
-			Assert.AreEqual (FILL_ME_IN, str.Length, "When Charles M. Schulz drew Charlie Brown's screams (AAAARGH!) - did he ever wonder if he mispelled them?");
+			Assert.AreEqual (100, str.Length, "When Charles M. Schulz drew Charlie Brown's screams (AAAARGH!) - did he ever wonder if he mispelled them?");
 
 			//The tradeoff is that you have to create a StringBuilder object, 
 			//which is a higher overhead than a string. So the rule of thumb
@@ -160,7 +160,7 @@ broken line";
 		public void LiteralStringsInterpretsEscapeCharacters ()
 		{
 			var str = "\n";
-			Assert.AreEqual (FILL_ME_IN, str.Length, "This is just like 'the sound of one hand clapping'...");
+			Assert.AreEqual (1, str.Length, "This is just like 'the sound of one hand clapping'...");
 		}
 
 		[Test]
@@ -189,7 +189,7 @@ broken line";
 		public void AnyExpressionCanBeUsedInFormatString ()
 		{
 			var str = String.Format ("The square root of 9 is {0}", Math.Sqrt (9));
-			Assert.AreEqual (FILL_ME_IN, str, ".NET will convert the value into a string, but you still have to do the math.");
+			Assert.AreEqual ("The square root of 9 is 3", str, ".NET will convert the value into a string, but you still have to do the math.");
 		}
 
 		[Test]
@@ -221,7 +221,7 @@ broken line";
 		{
 			var strArray1 = new[] { "alpha", "beta", "gamma" };
 			var strArray2 = new[] { "alpha", "beta", "gamma" };
-			Assert.AreEqual (FILL_ME_IN, strArray2, "If only there another call other than Assert, but just for Collections...");
+			Assert.AreEqual (strArray1, strArray2, "If only there another call other than Assert, but just for Collections...");
 		}
 
 		[Test]
@@ -281,7 +281,7 @@ broken line";
 		{
 			var strProper = "United States of America";
 			var strUpper = "UNITED STATES OF AMERICA";
-			Assert.AreEqual (FILL_ME_IN, strProper.Equals (strUpper), "It's not what you say, it's how you say it.");
+			Assert.AreEqual (false, strProper.Equals (strUpper), "It's not what you say, it's how you say it.");
 		}
 
 		[Test]
@@ -292,7 +292,7 @@ broken line";
 
 			// Strings have built-in methods to do the conversion
 			// Do a conversion on strProper to make it match strUpper
-			Assert.AreEqual (FILL_ME_IN, strUpper, "How can you argue with something in ALL CAPS? Someone took the time to press the shift key..");
+			Assert.AreEqual (strProper.ToUpper(), strUpper, "How can you argue with something in ALL CAPS? Someone took the time to press the shift key..");
 		}
 
 		[Test]
@@ -301,7 +301,7 @@ broken line";
 			var strProper = "United States of America";
 			var strUpper = "UNITED STATES OF AMERICA";
 
-			Assert.AreEqual (String.Compare (strProper, strUpper, StringComparison.OrdinalIgnoreCase), FILL_ME_IN, "Six of one, half a dozen of another.");
+			Assert.AreEqual (String.Compare (strProper, strUpper, StringComparison.OrdinalIgnoreCase), 0, "Six of one, half a dozen of another.");
 
 			// And be aware there are additional ways to compare (like .CompareTo), 
 			// but that might be better under AboutObjects?
@@ -311,7 +311,7 @@ broken line";
 		public void InsertingStrings ()
 		{
 			var str = "John Adams";
-			Assert.AreEqual (str.Insert (5, "Quincy "), FILL_ME_IN, "I wonder if they called the 6th President of the United States 'Q', like we used to call the last Bush president 'W'...");
+			Assert.AreEqual (str.Insert (5, "Quincy "), "John Quincy Adams", "I wonder if they called the 6th President of the United States 'Q', like we used to call the last Bush president 'W'...");
 
 			// Note that Insert() does not change the value of immutable string str
 			// Assert.AreEqual(str, "John Quincy Adams"); // This would not pass
@@ -323,7 +323,7 @@ broken line";
 		{
 			var str = "John Adams";
 			str = str.Insert (5, "Quincy ");
-			Assert.AreEqual (FILL_ME_IN, str, "'To furnish the means of acquiring knowledge is... the greatest benefit that can be conferred upon mankind' - John Quincy Adams");
+			Assert.AreEqual ("John Quincy Adams", str, "'To furnish the means of acquiring knowledge is... the greatest benefit that can be conferred upon mankind' - John Quincy Adams");
 		}
 
 		[Test]
