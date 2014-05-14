@@ -24,7 +24,7 @@ namespace TheKoans
 		{
 			// Note the use of single quotes below.  They're not double quotes, which are definitely used for strings.
 			var str = 'H';
-			Assert.AreEqual (typeof(FILL_ME_IN), str.GetType (), "A single tree does not a forest make.");
+			Assert.AreEqual (typeof(char), str.GetType (), "A single tree does not a forest make.");
 		}
 
 		[Test]
@@ -88,7 +88,7 @@ broken line";
 		public void PlusWillConcatenateTwoStrings ()
 		{
 			var str = "Hello, " + "World";
-			Assert.AreEqual (FILL_ME_IN, str, "Such a simple phrase, and yet sometimes it takes so much code just to make it happen..");
+			Assert.AreEqual ("Hello, World", str, "Such a simple phrase, and yet sometimes it takes so much code just to make it happen..");
 		}
 
 		[Test]
@@ -97,9 +97,9 @@ broken line";
 			var strA = "Hello, ";
 			var strB = "World";
 			var fullString = strA + strB;
-			Assert.AreEqual (FILL_ME_IN, strA, "The Method name suggests it wouldn't be modified, but only one way to find out");
-			Assert.AreEqual (FILL_ME_IN, strB, "Well, I guess checking both variables is technically an OTHER way...");
-			Assert.AreEqual (FILL_ME_IN, fullString, "I think they purposefully call it concatenation to make it sound as complex as it really is");
+			Assert.AreEqual ("Hello, ", strA, "The Method name suggests it wouldn't be modified, but only one way to find out");
+			Assert.AreEqual ("World", strB, "Well, I guess checking both variables is technically an OTHER way...");
+			Assert.AreEqual ("Hello, World", fullString, "I think they purposefully call it concatenation to make it sound as complex as it really is");
 		}
 
 		[Test]
@@ -108,8 +108,8 @@ broken line";
 			var strA = "Hello, ";
 			var strB = "World";
 			strA += strB;
-			Assert.AreEqual (FILL_ME_IN, strA, "Are you a parrot now?");
-			Assert.AreEqual (FILL_ME_IN, strB, "Why did they stop at world?  Why not 'Universe'?  Why not 'Zoidberg'?");
+			Assert.AreEqual ("Hello, World", strA, "Are you a parrot now?");
+			Assert.AreEqual ("World", strB, "Why did they stop at world?  Why not 'Universe'?  Why not 'Zoidberg'?");
 		}
 
 		[Test]
@@ -126,7 +126,7 @@ broken line";
 			var originalString = strA;
 			const string strB = "World";
 			strA += strB;
-			Assert.AreEqual (FILL_ME_IN, originalString, "'Be yourself. The world worships the original.' - Jacques Cocteau");
+			Assert.AreEqual ("Hello, ", originalString, "'Be yourself. The world worships the original.' - Jacques Cocteau");
 
 			//What just happened? Well, the string concatenation actually
 			//takes strA and strB and creates a *new* string in memory
@@ -213,7 +213,7 @@ broken line";
 		{
 			Assert.AreEqual (97, 'a');
 			Assert.AreEqual (98, 'b');
-			Assert.AreEqual (FILL_ME_IN, 'b' == ('a' + 1), "You can thank your Algebra teacher later..");
+			Assert.AreEqual (true, 'b' == ('a' + 1), "You can thank your Algebra teacher later..");
 		}
 
 		[Test]
@@ -230,7 +230,7 @@ broken line";
 			var str = "Sausage Egg Cheese";
 			string[] words = str.Split ();
 			// Note that we're using a different
-			CollectionAssert.AreEqual (new[] { FILL_ME_IN }, words, "Identify all the elements in the 'words' string array based on the 'str' string.  And hurry.. I'm getting hungry.");
+			CollectionAssert.AreEqual (new[] { "Sausage","Egg","Cheese" }, words, "Identify all the elements in the 'words' string array based on the 'str' string.  And hurry.. I'm getting hungry.");
 		}
 
 		[Test]
@@ -238,7 +238,7 @@ broken line";
 		{
 			var str = "Peter:Flopsy:Mopsy:Cottontail";
 			string[] words = str.Split (':');
-			CollectionAssert.AreEqual (new[] { FILL_ME_IN }, words, "I just had to find a way to split hares.");
+			CollectionAssert.AreEqual (new[] { "Peter","Flopsy","Mopsy","Cottontail" }, words, "I just had to find a way to split hares.");
 		}
 
 		[Test]
@@ -247,7 +247,7 @@ broken line";
 			var str = "the:rain:in:spain";
 			var regex = new System.Text.RegularExpressions.Regex (":");
 			string[] words = regex.Split (str);
-			CollectionAssert.AreEqual (new[] { FILL_ME_IN }, words, "The way Eliza Doolittle first spoke in 'My Fair Lady' would break anyone's Karma.");
+			CollectionAssert.AreEqual (new[] { "the", "rain", "in", "spain" }, words, "The way Eliza Doolittle first spoke in 'My Fair Lady' would break anyone's Karma.");
 
 			//A full treatment of regular expressions is beyond the scope
 			//of this tutorial. The book "Mastering Regular Expressions"
@@ -273,7 +273,7 @@ broken line";
 
 			// Maybe there's a better way of sharing this information, but just add True
 			// below after reading this.
-			Assert.AreEqual (true, FILL_ME_IN, "Sometimes you need to take time and stop to smell the performance..");
+			Assert.AreEqual (true, str == "", "Sometimes you need to take time and stop to smell the performance..");
 		}
 
 		[Test]
@@ -331,7 +331,7 @@ broken line";
 		{
 			var str = "OholeNE";
 			str = str.Remove (1, 4);
-			Assert.AreEqual (str, FILL_ME_IN, "Channeling Tiger Woods might help you identify the resulting string from this 'hole' in 'ONE'...");
+			Assert.AreEqual (str, "ONE", "Channeling Tiger Woods might help you identify the resulting string from this 'hole' in 'ONE'...");
 		}
 
 		[Test]
